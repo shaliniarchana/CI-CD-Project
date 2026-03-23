@@ -1,30 +1,35 @@
 name: Hotel Project CI-CD
 
+# Trigger this workflow when code is pushed to the main branch
 on:
   push:
     branches: [ main ]
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
-    permissions:           
-      contents: write
+    runs-on: ubuntu-latest  # Use the latest Ubuntu runner
+    permissions:
+      contents: write       # Allow workflow to write to repository (needed for gh-pages)
     steps:
+      # Step 1: Checkout the repository code
       - name: Checkout Code
         uses: actions/checkout@v4
 
+      # Step 2: Setup Node.js environment
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
+      # Step 3: Install dependencies and build the project
       - name: Install & Build
         run: |
           npm install
           npm run build
 
+      # Step 4: Deploy the built files to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GH_TOKEN}}
+          github_token: ${{ secrets.GH_TOKEN }}
           publish_dir: ./dist

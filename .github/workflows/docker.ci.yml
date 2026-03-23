@@ -1,0 +1,28 @@
+name: Build & Run Docker
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  docker-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout your code
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      # Step 2: Set up Docker Buildx (for building images)
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      # Step 3: Build Docker image
+      - name: Build Docker image
+        run: |
+          docker build -t hotel_counter_ci_cd .
+
+      # Step 4: Run container (in GitHub cloud)
+      - name: Run container
+        run: |
+          docker run -d -p 3000:3000 hotel_counter_ci_cd
