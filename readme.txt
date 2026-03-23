@@ -46,6 +46,7 @@ project-root/
 ├── .github/
 │   └── workflows/
 │       └── ci-cd.yml      # CI/CD pipeline configuration
+|       |__docker.ci.yml   #Your GitHub Actions workflow that tells GitHub how to automatically build and run your Docker image whenever you push code.
 │
 ├── src/                   # Source files
 │   ├── index.html
@@ -57,6 +58,7 @@ project-root/
 │   └── index.html
 │
 ├── package.json           # Project configuration
+|__ Dockerfile             # How to build project environment and details
 ├── webpack.config.js      # Webpack setup
 ```
 
@@ -261,6 +263,7 @@ to automatic fixes npx eslint@8 src/**/*.js --fix
 
 
 ---
+
 
 ## 💡 If need to use Docker to clone the project and automatically install all dependencies like that .create Dockerfile at root folder 
 
