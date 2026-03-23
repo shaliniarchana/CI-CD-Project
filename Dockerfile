@@ -1,3 +1,5 @@
+# This file is for users who clone this project, making it easy to develop without installing dependencies again and again
+
 # Use official Node.js image
 FROM node:20-alpine
 

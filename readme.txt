@@ -267,6 +267,18 @@ to automatic fixes npx eslint@8 src/**/*.js --fix
 
 ## 💡 If need to use Docker to clone the project and automatically install all dependencies like that .create Dockerfile at root folder 
 
+## Docker file and docker.ci.yml usage
+
+Dockerfile 🐳 – This is like a recipe for your project. It tells Docker:
+Which base system to use (Node.js, etc.)
+Which files to copy
+How to install dependencies
+How to build and run your project
+
+docker-ci.yml 🤖 – This is the automation plan for GitHub Actions. It tells GitHub to:
+Build a Docker image using your Dockerfile
+Run your project inside a container
+Make sure it works automatically whenever you push code
 
 ## 🎯 Summary
 
