@@ -1,0 +1,35 @@
+🚀 Getting Started After Cloning
+
+Clone the repository
+git clone https://github.com/your-username/HOTEL_COUNTER_CI_CD.git
+cd HOTEL_COUNTER_CI_CD
+
+Install dependencies
+npm install
+
+Run project in development mode (auto-reload on changes)
+npm start
+
+Build project for production
+npm run build
+
+Preview production build
+npx serve dist
+
+Check code quality (optional)
+npm run lint
+
+# Or automatically fix issues
+npx eslint src/**/*.js --fix
+
+Run project using Docker (optional)
+docker build -t hotel-counter:latest .
+docker run -p 3000:3000 hotel-counter:latest
+
+Access project at http://localhost:3000
+Works on any machine without installing Node.js
+
+Push changes (if allowed)
+git add .
+git commit -m "Update something"
+git push origin main
